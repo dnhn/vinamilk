@@ -1,0 +1,10 @@
+.float-label-input {
+  input:not(:placeholder-shown) + label,
+  &:focus-within label {
+    @apply mt-1 bg-main -translate-y-6 scale-75;
+
+    @media (min-width: 768px) {
+      margin-top: -0.125rem;
+    }
+  }
+}
