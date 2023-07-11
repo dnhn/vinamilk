@@ -11,13 +11,14 @@ export default function App() {
     year: '',
     bgColor: '#0213b0',
     color: '#fffff1',
+    uppercase: true,
   });
   const [modal, setModal] = useState<boolean>(false);
 
-  function handleChange(e: ChangeEvent<HTMLInputElement>, field: string) {
+  function handleChange(field: string, value: string | boolean) {
     setData((prevData) => ({
       ...prevData,
-      [field]: e.target.value,
+      [field]: value,
     }));
   }
 
@@ -40,7 +41,7 @@ export default function App() {
           <div className="w-full mt-10">
             <div className="w-full max-w-xl px-4 mx-auto">
               <form onSubmit={handleSubmit} className="font-inter">
-                <div className="grid grid-cols-3 gap-4">
+                <div className="grid gap-4 sm:grid-cols-3">
                   <div className="relative float-label-input">
                     <input
                       id="est"
@@ -48,7 +49,7 @@ export default function App() {
                       placeholder=" "
                       value={data.est}
                       className="relative flex-col justify-center w-full h-10 md:h-[52px] px-6 text-base border rounded-full outline-none text-vnm border-vnm bg-main"
-                      onChange={(e) => handleChange(e, 'est')}
+                      onChange={(e) => handleChange('est', e.target.value)}
                     />
                     <label
                       htmlFor="est"
@@ -67,7 +68,7 @@ export default function App() {
                       placeholder=" "
                       value={data.name}
                       className="relative flex-col justify-center w-full h-10 md:h-[52px] px-6 text-base border rounded-full outline-none text-vnm border-vnm bg-main"
-                      onChange={(e) => handleChange(e, 'name')}
+                      onChange={(e) => handleChange('name', e.target.value)}
                     />
                     <label
                       htmlFor="name"
@@ -75,7 +76,7 @@ export default function App() {
                     >
                       Chính giữa
                     </label>
-                    <p className="px-2 mt-1 text-xs text-note">
+                    <p className="mt-1 px-2 text-xs text-note">
                       Viết sao cũng được
                     </p>
                   </div>
@@ -86,7 +87,7 @@ export default function App() {
                       placeholder=" "
                       value={data.year}
                       className="relative flex-col justify-center w-full h-10 md:h-[52px] px-6 text-base border rounded-full outline-none text-vnm border-vnm bg-main"
-                      onChange={(e) => handleChange(e, 'year')}
+                      onChange={(e) => handleChange('year', e.target.value)}
                     />
                     <label
                       htmlFor="year"
@@ -103,24 +104,48 @@ export default function App() {
                       type="color"
                       id="bgcolor"
                       name="bgcolor"
-                      placeholder=" "
                       value={data.bgColor}
-                      className="relative flex-col justify-center w-full h-10 md:h-[52px] text-base border rounded-full outline-none text-vnm border-vnm bg-main"
-                      onChange={(e) => handleChange(e, 'bgColor')}
+                      className="relative flex-col justify-center w-full h-10 md:h-[52px] text-base border rounded-full outline-none border-vnm bg-main"
+                      onChange={(e) => handleChange('bgColor', e.target.value)}
                     />
-                    <p className="px-2 mt-1 text-xs text-note">Màu nền</p>
+                    <p className="mt-1 px-2 text-center text-xs text-note">
+                      Màu nền
+                    </p>
                   </div>
                   <div className="relative float-label-input">
                     <input
                       type="color"
                       id="color"
                       name="color"
-                      placeholder=" "
                       value={data.color}
-                      className="relative flex-col justify-center w-full h-10 md:h-[52px] text-base border rounded-full outline-none text-vnm border-vnm bg-main"
-                      onChange={(e) => handleChange(e, 'color')}
+                      className="relative flex-col justify-center w-full h-10 md:h-[52px] text-base border rounded-full outline-none border-vnm bg-main"
+                      onChange={(e) => handleChange('color', e.target.value)}
                     />
-                    <p className="px-2 mt-1 text-xs text-note">Màu chữ</p>
+                    <p className="mt-1 px-2 text-center text-xs text-note">
+                      Màu chữ
+                    </p>
+                  </div>
+                  <div className="relative checkbox-input">
+                    <input
+                      type="checkbox"
+                      id="uppercase"
+                      name="uppercase"
+                      placeholder=" "
+                      checked={data.uppercase}
+                      className="absolute opacity-0"
+                      onChange={(e) =>
+                        handleChange('uppercase', e.target.checked)
+                      }
+                    />
+                    <label
+                      htmlFor="uppercase"
+                      className="flex justify-center items-center mx-auto h-10 aspect-square border border-vnm rounded-full bg-main text-vnm text-2xl font-bold md:h-[52px]"
+                    >
+                      {data.uppercase && '✓'}
+                    </label>
+                    <p className="mt-1 px-2 text-center text-xs text-note">
+                      <label htmlFor="uppercase">In hoa</label>
+                    </p>
                   </div>
                 </div>
                 <button

@@ -49,7 +49,12 @@ export default function Modal({
           >
             <div className="w-full">
               <div className="max-w-full mx-auto w-max">
-                <div className="text-[5rem] max-w-full leading-[85%] text-ellipsis whitespace-nowrap uppercase font-sans-display-bold">
+                <div
+                  className="text-[5rem] max-w-full leading-[85%] text-ellipsis whitespace-nowrap font-sans-display-bold"
+                  style={{
+                    textTransform: data.uppercase ? 'uppercase' : 'none',
+                  }}
+                >
                   {data.name}
                 </div>
                 <div className="flex justify-between -mt-1">

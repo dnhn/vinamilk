@@ -4,15 +4,18 @@
     @apply mt-1 bg-main -translate-y-6 scale-75;
 
     @media (min-width: 768px) {
-      margin-top: -0.125rem;
+      @apply mt-[-.125rem];
     }
   }
 }
 
 input[type='color'] {
+  &:focus {
+    @apply outline-2 outline-vnm;
+  }
+
   &::-webkit-color-swatch-wrapper {
-    border: 0;
-    padding: 0;
+    @apply border-0 p-0;
   }
 
   &::-webkit-color-swatch {
@@ -21,5 +24,12 @@ input[type='color'] {
 
   &::-moz-color-swatch {
     @apply rounded-full;
+  }
+}
+
+.checkbox-input {
+  input:focus-within + label {
+    @apply outline-2 outline-vnm outline-offset-2;
+    outline-style: solid;
   }
 }

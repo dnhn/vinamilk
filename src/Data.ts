@@ -4,4 +4,5 @@ export type Data = {
   year: string;
   bgColor: string;
   color: string;
+  uppercase: boolean;
 };
