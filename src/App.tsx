@@ -1,4 +1,16 @@
+import { FormEvent, useState } from 'react';
+
+import Modal from './components/Modal';
+
 export default function App() {
+  const [modal, setModal] = useState<boolean>(false);
+
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+
+    setModal(true);
+  };
+
   return (
     <>
       <div className="relative flex flex-col h-screen bg-main">
@@ -12,7 +24,10 @@ export default function App() {
           </div>
           <div className="flex flex-col-reverse justify-center w-full gap-10 mx-auto mt-10 lg:flex-row">
             <div className="flex-1 w-full max-w-xl px-4 mx-auto md:px-4">
-              <form className="flex flex-col flex-1 gap-4 font-inter">
+              <form
+                onSubmit={handleSubmit}
+                className="flex flex-col flex-1 gap-4 font-inter"
+              >
                 <div className="relative float-label-input">
                   <input
                     name="name"
@@ -48,10 +63,7 @@ export default function App() {
                     Nhập 4 chữ số
                   </p>
                 </div>
-                <button
-                  disabled
-                  className="h-10 md:h-[52px] px-6 text-lg text-white border border-white rounded-full outline-none font-sans-std disabled:bg-opacity-50 font-sans-stg bg-vnm"
-                >
+                <button className="h-10 md:h-[52px] px-6 text-lg text-white border border-white rounded-full outline-none font-sans-std disabled:bg-opacity-50 font-sans-stg bg-vnm">
                   Trình làng ngay!
                 </button>
               </form>
@@ -89,6 +101,7 @@ export default function App() {
           </div>
         </div>
       </div>
+      <Modal open={modal} handleClose={() => setModal(false)} />
     </>
   );
 }
