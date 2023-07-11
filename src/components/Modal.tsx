@@ -54,7 +54,7 @@ export default function Modal({
                 </div>
                 <div className="flex justify-between -mt-1">
                   <span className="text-[21px] font-sans-display-bold">
-                    EST
+                    {data.est || 'EST'}
                   </span>
                   <span className="text-[21px] font-sans-display-bold">
                     {data.year}

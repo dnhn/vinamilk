@@ -7,6 +7,7 @@ import Modal from './components/Modal';
 export default function App() {
   const [data, setData] = useState<Data>({
     name: '',
+    est: '',
     year: '',
     bgColor: '#0213b0',
     color: '#fffff1',
@@ -39,7 +40,26 @@ export default function App() {
           <div className="w-full mt-10">
             <div className="w-full max-w-xl px-4 mx-auto">
               <form onSubmit={handleSubmit} className="font-inter">
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-3 gap-4">
+                  <div className="relative float-label-input">
+                    <input
+                      id="est"
+                      name="est"
+                      placeholder=" "
+                      value={data.est}
+                      className="relative flex-col justify-center w-full h-10 md:h-[52px] px-6 text-base border rounded-full outline-none text-vnm border-vnm bg-main"
+                      onChange={(e) => handleChange(e, 'est')}
+                    />
+                    <label
+                      htmlFor="est"
+                      className="absolute rounded-full font-sans-std px-2 text-sm transition duration-200 ease-in-out bg-transparent pointer-events-none text-vnm left-2 top-2.5 md:top-4"
+                    >
+                      Bên trái
+                    </label>
+                    <p className="px-2 mt-1 text-xs text-note">
+                      Có hay không cũng được
+                    </p>
+                  </div>
                   <div className="relative float-label-input">
                     <input
                       id="name"
@@ -51,9 +71,9 @@ export default function App() {
                     />
                     <label
                       htmlFor="name"
-                      className="absolute px-2 font-sans-std text-sm transition duration-200 ease-in-out bg-transparent pointer-events-none text-vnm left-2 top-2.5 md:top-4"
+                      className="absolute rounded-full font-sans-std px-2 text-sm transition duration-200 ease-in-out bg-transparent pointer-events-none text-vnm left-2 top-2.5 md:top-4"
                     >
-                      Tên của bạn
+                      Chính giữa
                     </label>
                     <p className="px-2 mt-1 text-xs text-note">
                       Viết sao cũng được
@@ -70,9 +90,9 @@ export default function App() {
                     />
                     <label
                       htmlFor="year"
-                      className="absolute font-sans-std px-2 text-sm transition duration-200 ease-in-out bg-transparent pointer-events-none text-vnm left-2 top-2.5 md:top-4"
+                      className="absolute rounded-full font-sans-std px-2 text-sm transition duration-200 ease-in-out bg-transparent pointer-events-none text-vnm left-2 top-2.5 md:top-4"
                     >
-                      Năm bạn ra đời
+                      Bên phải
                     </label>
                     <p className="px-2 mt-1 text-xs text-note">
                       Số hay chữ gì cũng được
