@@ -8,6 +8,8 @@ export default function App() {
   const [data, setData] = useState<Data>({
     name: '',
     year: '',
+    bgColor: '#0213b0',
+    color: '#fffff1',
   });
   const [modal, setModal] = useState<boolean>(false);
 
@@ -75,6 +77,30 @@ export default function App() {
                     <p className="px-2 mt-1 text-xs text-note">
                       Số hay chữ gì cũng được
                     </p>
+                  </div>
+                  <div className="relative float-label-input">
+                    <input
+                      type="color"
+                      id="bgcolor"
+                      name="bgcolor"
+                      placeholder=" "
+                      value={data.bgColor}
+                      className="relative flex-col justify-center w-full h-10 md:h-[52px] text-base border rounded-full outline-none text-vnm border-vnm bg-main"
+                      onChange={(e) => handleChange(e, 'bgColor')}
+                    />
+                    <p className="px-2 mt-1 text-xs text-note">Màu nền</p>
+                  </div>
+                  <div className="relative float-label-input">
+                    <input
+                      type="color"
+                      id="color"
+                      name="color"
+                      placeholder=" "
+                      value={data.color}
+                      className="relative flex-col justify-center w-full h-10 md:h-[52px] text-base border rounded-full outline-none text-vnm border-vnm bg-main"
+                      onChange={(e) => handleChange(e, 'color')}
+                    />
+                    <p className="px-2 mt-1 text-xs text-note">Màu chữ</p>
                   </div>
                 </div>
                 <button

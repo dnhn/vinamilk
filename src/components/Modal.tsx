@@ -40,7 +40,13 @@ export default function Modal({
           </button>
         </div>
         <div className="relative w-[375px] h-[375px]">
-          <div className="flex flex-col text-[100%] items-center justify-center p-8 text-white w-[375px] h-[375px] bg-vnm">
+          <div
+            className="flex flex-col text-[100%] items-center justify-center p-8 text-white w-[375px] h-[375px] bg-vnm"
+            style={{
+              backgroundColor: data.bgColor,
+              color: data.color,
+            }}
+          >
             <div className="w-full">
               <div className="max-w-full mx-auto w-max">
                 <div className="text-[5rem] max-w-full leading-[85%] text-ellipsis whitespace-nowrap uppercase font-sans-display-bold">

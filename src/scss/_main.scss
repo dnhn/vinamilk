@@ -8,3 +8,18 @@
     }
   }
 }
+
+input[type='color'] {
+  &::-webkit-color-swatch-wrapper {
+    border: 0;
+    padding: 0;
+  }
+
+  &::-webkit-color-swatch {
+    @apply rounded-full;
+  }
+
+  &::-moz-color-swatch {
+    @apply rounded-full;
+  }
+}
