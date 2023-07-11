@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, Fragment, useState } from 'react';
+import { FormEvent, Fragment, useState } from 'react';
 
 import { Data } from './Data';
 
@@ -38,125 +38,123 @@ export default function App() {
             Vinamilk est. 1976,
             <br /> còn bạn?
           </div>
-          <div className="w-full mt-10">
-            <div className="w-full max-w-xl px-4 mx-auto">
-              <form onSubmit={handleSubmit} className="font-inter">
-                <div className="grid gap-4 sm:grid-cols-3">
-                  <div className="relative float-label-input">
-                    <input
-                      id="est"
-                      name="est"
-                      placeholder=" "
-                      value={data.est}
-                      className="relative flex-col justify-center w-full h-10 md:h-[52px] px-6 text-base border rounded-full outline-none text-vnm border-vnm bg-main"
-                      onChange={(e) => handleChange('est', e.target.value)}
-                    />
-                    <label
-                      htmlFor="est"
-                      className="absolute rounded-full font-sans-std px-2 text-sm transition duration-200 ease-in-out bg-transparent pointer-events-none text-vnm left-2 top-2.5 md:top-4"
-                    >
-                      Bên trái
-                    </label>
-                    <p className="px-2 mt-1 text-xs text-note">
-                      Có hay không cũng được
-                    </p>
-                  </div>
-                  <div className="relative float-label-input">
-                    <input
-                      id="name"
-                      name="name"
-                      placeholder=" "
-                      value={data.name}
-                      className="relative flex-col justify-center w-full h-10 md:h-[52px] px-6 text-base border rounded-full outline-none text-vnm border-vnm bg-main"
-                      onChange={(e) => handleChange('name', e.target.value)}
-                    />
-                    <label
-                      htmlFor="name"
-                      className="absolute rounded-full font-sans-std px-2 text-sm transition duration-200 ease-in-out bg-transparent pointer-events-none text-vnm left-2 top-2.5 md:top-4"
-                    >
-                      Chính giữa
-                    </label>
-                    <p className="mt-1 px-2 text-xs text-note">
-                      Viết sao cũng được
-                    </p>
-                  </div>
-                  <div className="relative float-label-input">
-                    <input
-                      id="year"
-                      name="year"
-                      placeholder=" "
-                      value={data.year}
-                      className="relative flex-col justify-center w-full h-10 md:h-[52px] px-6 text-base border rounded-full outline-none text-vnm border-vnm bg-main"
-                      onChange={(e) => handleChange('year', e.target.value)}
-                    />
-                    <label
-                      htmlFor="year"
-                      className="absolute rounded-full font-sans-std px-2 text-sm transition duration-200 ease-in-out bg-transparent pointer-events-none text-vnm left-2 top-2.5 md:top-4"
-                    >
-                      Bên phải
-                    </label>
-                    <p className="px-2 mt-1 text-xs text-note">
-                      Số hay chữ gì cũng được
-                    </p>
-                  </div>
-                  <div className="relative float-label-input">
-                    <input
-                      type="color"
-                      id="bgcolor"
-                      name="bgcolor"
-                      value={data.bgColor}
-                      className="relative flex-col justify-center w-full h-10 md:h-[52px] text-base border rounded-full outline-none border-vnm bg-main"
-                      onChange={(e) => handleChange('bgColor', e.target.value)}
-                    />
-                    <p className="mt-1 px-2 text-center text-xs text-note">
-                      Màu nền
-                    </p>
-                  </div>
-                  <div className="relative float-label-input">
-                    <input
-                      type="color"
-                      id="color"
-                      name="color"
-                      value={data.color}
-                      className="relative flex-col justify-center w-full h-10 md:h-[52px] text-base border rounded-full outline-none border-vnm bg-main"
-                      onChange={(e) => handleChange('color', e.target.value)}
-                    />
-                    <p className="mt-1 px-2 text-center text-xs text-note">
-                      Màu chữ
-                    </p>
-                  </div>
-                  <div className="relative checkbox-input">
-                    <input
-                      type="checkbox"
-                      id="uppercase"
-                      name="uppercase"
-                      placeholder=" "
-                      checked={data.uppercase}
-                      className="absolute opacity-0"
-                      onChange={(e) =>
-                        handleChange('uppercase', e.target.checked)
-                      }
-                    />
-                    <label
-                      htmlFor="uppercase"
-                      className="flex justify-center items-center mx-auto h-10 aspect-square border border-vnm rounded-full bg-main text-vnm text-2xl font-bold md:h-[52px]"
-                    >
-                      {data.uppercase && '✓'}
-                    </label>
-                    <p className="mt-1 px-2 text-center text-xs text-note">
-                      <label htmlFor="uppercase">In hoa</label>
-                    </p>
-                  </div>
+          <div className="my-10 w-full max-w-xl px-4 mx-auto">
+            <form onSubmit={handleSubmit} className="font-inter">
+              <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+                <div className="relative float-label-input">
+                  <input
+                    id="est"
+                    name="est"
+                    placeholder=" "
+                    value={data.est}
+                    className="relative flex-col justify-center w-full h-10 md:h-[52px] px-6 text-base border rounded-full outline-none text-vnm border-vnm bg-main"
+                    onChange={(e) => handleChange('est', e.target.value)}
+                  />
+                  <label
+                    htmlFor="est"
+                    className="absolute rounded-full font-sans-std px-2 text-sm transition duration-200 ease-in-out bg-transparent pointer-events-none text-vnm left-2 top-2.5 md:top-4"
+                  >
+                    Bên trái
+                  </label>
+                  <p className="px-2 mt-1 text-xs text-note">
+                    Có hay không cũng được
+                  </p>
                 </div>
-                <button
-                  type="submit"
-                  disabled={!data.name || !data.year}
-                  className="mt-4 w-full h-10 md:h-[52px] px-6 text-lg text-white border border-white rounded-full outline-none font-sans-std disabled:bg-opacity-50 font-sans-stg bg-vnm"
-                >
-                  Trình làng ngay!
-                </button>
-              </form>
-            </div>
+                <div className="relative float-label-input">
+                  <input
+                    id="name"
+                    name="name"
+                    placeholder=" "
+                    value={data.name}
+                    className="relative flex-col justify-center w-full h-10 md:h-[52px] px-6 text-base border rounded-full outline-none text-vnm border-vnm bg-main"
+                    onChange={(e) => handleChange('name', e.target.value)}
+                  />
+                  <label
+                    htmlFor="name"
+                    className="absolute rounded-full font-sans-std px-2 text-sm transition duration-200 ease-in-out bg-transparent pointer-events-none text-vnm left-2 top-2.5 md:top-4"
+                  >
+                    Chính giữa
+                  </label>
+                  <p className="mt-1 px-2 text-xs text-note">
+                    Viết sao cũng được
+                  </p>
+                </div>
+                <div className="relative float-label-input">
+                  <input
+                    id="year"
+                    name="year"
+                    placeholder=" "
+                    value={data.year}
+                    className="relative flex-col justify-center w-full h-10 md:h-[52px] px-6 text-base border rounded-full outline-none text-vnm border-vnm bg-main"
+                    onChange={(e) => handleChange('year', e.target.value)}
+                  />
+                  <label
+                    htmlFor="year"
+                    className="absolute rounded-full font-sans-std px-2 text-sm transition duration-200 ease-in-out bg-transparent pointer-events-none text-vnm left-2 top-2.5 md:top-4"
+                  >
+                    Bên phải
+                  </label>
+                  <p className="px-2 mt-1 text-xs text-note">
+                    Số hay chữ gì cũng được
+                  </p>
+                </div>
+                <div className="relative float-label-input">
+                  <input
+                    type="color"
+                    id="bgcolor"
+                    name="bgcolor"
+                    value={data.bgColor}
+                    className="relative flex-col justify-center w-full h-10 md:h-[52px] text-base border rounded-full outline-none border-vnm bg-main"
+                    onChange={(e) => handleChange('bgColor', e.target.value)}
+                  />
+                  <p className="mt-1 px-2 text-center text-xs text-note">
+                    Màu nền
+                  </p>
+                </div>
+                <div className="relative float-label-input">
+                  <input
+                    type="color"
+                    id="color"
+                    name="color"
+                    value={data.color}
+                    className="relative flex-col justify-center w-full h-10 md:h-[52px] text-base border rounded-full outline-none border-vnm bg-main"
+                    onChange={(e) => handleChange('color', e.target.value)}
+                  />
+                  <p className="mt-1 px-2 text-center text-xs text-note">
+                    Màu chữ
+                  </p>
+                </div>
+                <div className="relative checkbox-input">
+                  <input
+                    type="checkbox"
+                    id="uppercase"
+                    name="uppercase"
+                    placeholder=" "
+                    checked={data.uppercase}
+                    className="absolute opacity-0"
+                    onChange={(e) =>
+                      handleChange('uppercase', e.target.checked)
+                    }
+                  />
+                  <label
+                    htmlFor="uppercase"
+                    className="flex justify-center items-center mx-auto h-10 aspect-square border border-vnm rounded-full bg-main text-vnm text-2xl font-bold md:h-[52px]"
+                  >
+                    {data.uppercase && '✓'}
+                  </label>
+                  <p className="mt-1 px-2 text-center text-xs text-note">
+                    <label htmlFor="uppercase">In hoa</label>
+                  </p>
+                </div>
+              </div>
+              <button
+                type="submit"
+                disabled={!data.name || !data.year}
+                className="mt-4 w-full h-10 md:h-[52px] px-6 text-lg text-white border border-white rounded-full outline-none font-sans-std disabled:bg-opacity-50 font-sans-stg bg-vnm"
+              >
+                Trình làng ngay!
+              </button>
+            </form>
           </div>
         </div>
         <div className="flex flex-col items-center justify-center py-4 text-white bg-vnm text-xs font-inter">
