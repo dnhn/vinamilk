@@ -1,18 +1,30 @@
-import { FormEvent, useState } from 'react';
+import { ChangeEvent, FormEvent, Fragment, useState } from 'react';
+
+import { Data } from './Data';
 
 import Modal from './components/Modal';
 
 export default function App() {
+  const [data, setData] = useState<Data>({
+    name: '',
+    year: '',
+  });
   const [modal, setModal] = useState<boolean>(false);
 
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
+  function handleChange(e: ChangeEvent<HTMLInputElement>, field: string) {
+    setData((prevData) => ({
+      ...prevData,
+      [field]: e.target.value,
+    }));
+  }
 
+  function handleSubmit(e: FormEvent) {
+    e.preventDefault();
     setModal(true);
-  };
+  }
 
   return (
-    <>
+    <Fragment>
       <div className="relative flex flex-col h-screen bg-main">
         <div className="flex items-center justify-center py-4 transition-all transform bg-main duration-350 h-14">
           <img src="/images/logo.svg" alt="header" />
@@ -22,48 +34,54 @@ export default function App() {
             Vinamilk est. 1976,
             <br /> còn bạn?
           </div>
-          <div className="flex flex-col-reverse justify-center w-full gap-10 mx-auto mt-10 lg:flex-row">
-            <div className="flex-1 w-full max-w-xl px-4 mx-auto md:px-4">
-              <form
-                onSubmit={handleSubmit}
-                className="flex flex-col flex-1 gap-4 font-inter"
-              >
-                <div className="relative float-label-input">
-                  <input
-                    name="name"
-                    placeholder=" "
-                    id="name"
-                    className="relative flex-col justify-center w-full h-10 md:h-[52px] px-6 text-base border rounded-full outline-none text-vnm border-vnm bg-main"
-                  />
-                  <label
-                    htmlFor="year"
-                    className="absolute px-2 font-sans-std text-sm transition duration-200 ease-in-out bg-transparent pointer-events-none text-vnm left-2 top-2.5 md:top-4"
-                  >
-                    Tên của bạn
-                  </label>
-                  <p className="px-2 mt-1 text-[10px] text-note">
-                    Tên giới hạn 6-10 ký tự, không bao gồm ký tự đặc biệt như
-                    $,%,&,*.#,@,...
-                  </p>
+          <div className="w-full mt-10">
+            <div className="w-full max-w-xl px-4 mx-auto">
+              <form onSubmit={handleSubmit} className="font-inter">
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="relative float-label-input">
+                    <input
+                      id="name"
+                      name="name"
+                      placeholder=" "
+                      value={data.name}
+                      className="relative flex-col justify-center w-full h-10 md:h-[52px] px-6 text-base border rounded-full outline-none text-vnm border-vnm bg-main"
+                      onChange={(e) => handleChange(e, 'name')}
+                    />
+                    <label
+                      htmlFor="name"
+                      className="absolute px-2 font-sans-std text-sm transition duration-200 ease-in-out bg-transparent pointer-events-none text-vnm left-2 top-2.5 md:top-4"
+                    >
+                      Tên của bạn
+                    </label>
+                    <p className="px-2 mt-1 text-xs text-note">
+                      Viết sao cũng được
+                    </p>
+                  </div>
+                  <div className="relative float-label-input">
+                    <input
+                      id="year"
+                      name="year"
+                      placeholder=" "
+                      value={data.year}
+                      className="relative flex-col justify-center w-full h-10 md:h-[52px] px-6 text-base border rounded-full outline-none text-vnm border-vnm bg-main"
+                      onChange={(e) => handleChange(e, 'year')}
+                    />
+                    <label
+                      htmlFor="year"
+                      className="absolute font-sans-std px-2 text-sm transition duration-200 ease-in-out bg-transparent pointer-events-none text-vnm left-2 top-2.5 md:top-4"
+                    >
+                      Năm bạn ra đời
+                    </label>
+                    <p className="px-2 mt-1 text-xs text-note">
+                      Số hay chữ gì cũng được
+                    </p>
+                  </div>
                 </div>
-                <div className="relative float-label-input">
-                  <input
-                    name="year"
-                    placeholder=" "
-                    id="year"
-                    className="relative flex-col justify-center w-full h-10 md:h-[52px] px-6 text-base border rounded-full outline-none text-vnm border-vnm bg-main"
-                  />
-                  <label
-                    htmlFor="year"
-                    className="absolute font-sans-std px-2 text-sm transition duration-200 ease-in-out bg-transparent pointer-events-none text-vnm left-2 top-2.5 md:top-4"
-                  >
-                    Năm bạn ra đời
-                  </label>
-                  <p className="px-2 mt-1 text-[10px] text-note">
-                    Nhập 4 chữ số
-                  </p>
-                </div>
-                <button className="h-10 md:h-[52px] px-6 text-lg text-white border border-white rounded-full outline-none font-sans-std disabled:bg-opacity-50 font-sans-stg bg-vnm">
+                <button
+                  type="submit"
+                  disabled={!data.name || !data.year}
+                  className="mt-4 w-full h-10 md:h-[52px] px-6 text-lg text-white border border-white rounded-full outline-none font-sans-std disabled:bg-opacity-50 font-sans-stg bg-vnm"
+                >
                   Trình làng ngay!
                 </button>
               </form>
@@ -101,7 +119,7 @@ export default function App() {
           </div>
         </div>
       </div>
-      <Modal open={modal} handleClose={() => setModal(false)} />
-    </>
+      <Modal open={modal} data={data} handleClose={() => setModal(false)} />
+    </Fragment>
   );
 }

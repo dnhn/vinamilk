@@ -3,13 +3,16 @@ import ReactModal from 'react-modal';
 
 import CloseSvg from './CloseSvg';
 import DownloadSvg from './DownloadSvg';
+import { Data } from '../Data';
 
 export default function Modal({
   open,
   handleClose,
+  data,
 }: {
   open: boolean;
   handleClose: MouseEventHandler;
+  data: Data;
 }) {
   return (
     <ReactModal
@@ -41,14 +44,14 @@ export default function Modal({
             <div className="w-full">
               <div className="max-w-full mx-auto w-max">
                 <div className="text-[5rem] max-w-full leading-[85%] text-ellipsis whitespace-nowrap uppercase font-sans-display-bold">
-                  vinamilk
+                  {data.name}
                 </div>
                 <div className="flex justify-between -mt-1">
                   <span className="text-[21px] font-sans-display-bold">
                     EST
                   </span>
                   <span className="text-[21px] font-sans-display-bold">
-                    1976
+                    {data.year}
                   </span>
                 </div>
               </div>
