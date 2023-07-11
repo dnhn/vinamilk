@@ -114,11 +114,6 @@ export default function App() {
             </div>
           </div>
         </div>
-        <div className="w-full overflow-hidden">
-          <div className="w-[1920px]">
-            <img alt="footer" src="/images/line.svg" />
-          </div>
-        </div>
         <div className="flex flex-col items-center justify-center py-4 text-white bg-vnm text-xs font-inter">
           <div className="px-4">
             Phát triển dựa trên{' '}
@@ -132,8 +127,8 @@ export default function App() {
             </a>
             .
           </div>
-          <div className="px-4">
-            Mã nguồn GitHub{' '}
+          <div className="px-4 mt-1">
+            Mã nguồn được lưu trữ trên GitHub{' '}
             <a
               className="underline"
               href="https://github.com/dnhn/vinamilk"

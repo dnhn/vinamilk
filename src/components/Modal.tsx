@@ -71,9 +71,6 @@ export default function Modal({
           </button>
         </div>
       </div>
-      <div className="absolute bottom-0 left-0 w-full -right-3">
-        <img alt="footer" src="/images/line.png" />
-      </div>
     </ReactModal>
   );
 }
