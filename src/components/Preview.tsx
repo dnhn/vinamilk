@@ -57,10 +57,10 @@ export default function Preview({
             >
               {data.name}
             </div>
-            {data.name && data.year && (
+            {data.name && (
               <div className="-mt-1 flex justify-between">
                 <span className="font-sans-display-bold text-[21px]">
-                  {data.est || 'EST'}
+                  {data.est || (data.year && 'EST')}
                 </span>
                 <span className="font-sans-display-bold text-[21px]">
                   {data.year}
@@ -71,7 +71,7 @@ export default function Preview({
         </div>
       </div>
       <button
-        disabled={!data.name || !data.year}
+        disabled={!data.name}
         onClick={download}
         className="border border-white rounded-full w-full h-10 px-6 flex items-center justify-center gap-1 bg-vnm text-white font-sans-std text-lg md:h-[52px] focus-within:outline-vnm focus-within:outline-offset-4 disabled:bg-opacity-50"
       >
