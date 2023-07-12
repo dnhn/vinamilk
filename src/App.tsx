@@ -105,7 +105,7 @@ export default function App() {
                   id="bgcolor"
                   name="bgcolor"
                   value={data.bgColor}
-                  className="mx-auto border border-vnm rounded-full block w-10 h-10 bg-main md:w-[52px] md:h-[52px]"
+                  className="mx-auto border border-vnm outline-vnm outline-offset-4 rounded-full block w-10 h-10 bg-main md:w-[52px] md:h-[52px] focus:outline-2"
                   onChange={(e) => handleChange('bgColor', e.target.value)}
                 />
                 <p className="mt-1 px-2 text-center text-note text-xs">
@@ -118,7 +118,7 @@ export default function App() {
                   id="color"
                   name="color"
                   value={data.color}
-                  className="mx-auto border border-vnm rounded-full block w-10 h-10 bg-main md:w-[52px] md:h-[52px]"
+                  className="mx-auto border border-vnm outline-vnm outline-offset-4 rounded-full block w-10 h-10 bg-main md:w-[52px] md:h-[52px] focus:outline-2"
                   onChange={(e) => handleChange('color', e.target.value)}
                 />
                 <p className="mt-1 px-2 text-center text-note text-xs">
