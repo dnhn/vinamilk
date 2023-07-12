@@ -1,7 +1,7 @@
 import { useCallback, useRef } from 'react';
 import { toPng } from 'html-to-image';
 
-import { IData } from '../Data';
+import { IData } from '../Types';
 
 import DownloadSvg from './DownloadSvg';
 

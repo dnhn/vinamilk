@@ -1,6 +1,6 @@
 import { Fragment, useState } from 'react';
 
-import { IData } from './Data';
+import { IData } from './Types';
 
 import Preview from './components/Preview';
 
