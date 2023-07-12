@@ -24,14 +24,20 @@ export default function App() {
   return (
     <Fragment>
       <div className="relative flex flex-col h-screen bg-main">
-        <div className="flex items-center justify-center py-4 transition-all transform bg-main duration-350 h-14">
-          <img src="/images/logo.svg" alt="header" />
+        <div className="py-4 bg-main">
+          <img
+            src="/images/logo.svg"
+            width={115}
+            height={38}
+            alt="header"
+            className="mx-auto"
+          />
         </div>
-        <div className="flex flex-col items-center flex-1 pt-10 overflow-auto">
-          <div className="lg:text-[110px] md:text-[110px] leading-[85%] md:leading-[85%] text-[60px] py-2 text-center px-3 md:px-4 text-vnm font-sans-display-bold uppercase">
+        <div className="flex-1 pt-10 overflow-auto">
+          <h1 className="py-2 px-3 text-center text-vnm font-sans-display-bold text-[60px] leading-[85%] uppercase md:px-4 md:text-[110px] md:leading-[85%]">
             Vinamilk est. 1976,
             <br /> còn bạn?
-          </div>
+          </h1>
           <div className="mx-auto py-10 w-full max-w-xl px-4 flex flex-col gap-4 font-inter">
             <div className="grid gap-4 md:grid-cols-3">
               <div className="relative float-label-input">
