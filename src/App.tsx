@@ -23,7 +23,7 @@ export default function App() {
 
   return (
     <Fragment>
-      <div className="relative flex flex-col h-screen bg-main">
+      <div className="flex flex-col h-screen bg-main">
         <div className="py-4 bg-main">
           <img
             src="/images/logo.svg"
@@ -33,12 +33,12 @@ export default function App() {
             className="mx-auto"
           />
         </div>
-        <div className="flex-1 pt-10 overflow-auto">
+        <div className="flex-1 py-10 overflow-auto">
           <h1 className="py-2 px-3 text-center text-vnm font-sans-display-bold text-[60px] leading-[85%] uppercase md:px-4 md:text-[110px] md:leading-[85%]">
             Vinamilk est. 1976,
             <br /> còn bạn?
           </h1>
-          <div className="mx-auto py-10 w-full max-w-xl px-4 flex flex-col gap-4 font-inter">
+          <div className="mx-auto w-full max-w-xl pt-10 px-4 font-inter">
             <div className="grid gap-4 md:grid-cols-3">
               <div className="relative float-label-input">
                 <input
@@ -46,16 +46,16 @@ export default function App() {
                   name="est"
                   placeholder=" "
                   value={data.est}
-                  className="relative flex-col justify-center w-full h-10 md:h-[52px] px-6 text-base border rounded-full outline-none text-vnm border-vnm bg-main"
+                  className="relative border border-vnm outline-none rounded-full w-full h-10 px-6 bg-main text-vnm text-base md:h-[52px]"
                   onChange={(e) => handleChange('est', e.target.value)}
                 />
                 <label
                   htmlFor="est"
-                  className="absolute rounded-full font-sans-std px-2 text-sm transition duration-200 ease-in-out bg-transparent pointer-events-none text-vnm left-2 top-2.5 md:top-4"
+                  className="pointer-events-none absolute top-2.5 left-2 rounded-full px-2 text-vnm font-sans-std text-sm transition duration-200 ease-in-out md:top-4"
                 >
                   Bên trái
                 </label>
-                <p className="px-2 mt-1 text-xs text-note">
+                <p className="mt-1 px-2 text-note text-xs">
                   Có hay không cũng được
                 </p>
               </div>
@@ -65,16 +65,16 @@ export default function App() {
                   name="name"
                   placeholder=" "
                   value={data.name}
-                  className="relative flex-col justify-center w-full h-10 md:h-[52px] px-6 text-base border rounded-full outline-none text-vnm border-vnm bg-main"
+                  className="relative border border-vnm outline-none rounded-full w-full h-10 px-6 bg-main text-vnm text-base md:h-[52px]"
                   onChange={(e) => handleChange('name', e.target.value)}
                 />
                 <label
                   htmlFor="name"
-                  className="absolute rounded-full font-sans-std px-2 text-sm transition duration-200 ease-in-out bg-transparent pointer-events-none text-vnm left-2 top-2.5 md:top-4"
+                  className="pointer-events-none absolute top-2.5 left-2 rounded-full px-2 text-vnm font-sans-std text-sm transition duration-200 ease-in-out md:top-4"
                 >
                   Chính giữa
                 </label>
-                <p className="mt-1 px-2 text-xs text-note">
+                <p className="mt-1 px-2 text-note text-xs">
                   Viết sao cũng được
                 </p>
               </div>
@@ -84,31 +84,31 @@ export default function App() {
                   name="year"
                   placeholder=" "
                   value={data.year}
-                  className="relative flex-col justify-center w-full h-10 md:h-[52px] px-6 text-base border rounded-full outline-none text-vnm border-vnm bg-main"
+                  className="relative border border-vnm outline-none rounded-full w-full h-10 px-6 bg-main text-vnm text-base md:h-[52px]"
                   onChange={(e) => handleChange('year', e.target.value)}
                 />
                 <label
                   htmlFor="year"
-                  className="absolute rounded-full font-sans-std px-2 text-sm transition duration-200 ease-in-out bg-transparent pointer-events-none text-vnm left-2 top-2.5 md:top-4"
+                  className="pointer-events-none absolute top-2.5 left-2 rounded-full px-2 text-vnm font-sans-std text-sm transition duration-200 ease-in-out md:top-4"
                 >
                   Bên phải
                 </label>
-                <p className="px-2 mt-1 text-xs text-note">
+                <p className="mt-1 px-2 text-note text-xs">
                   Số hay chữ gì cũng được
                 </p>
               </div>
             </div>
-            <div className="grid gap-4 grid-cols-3">
+            <div className="mt-4 grid grid-cols-3 gap-4">
               <div className="relative float-label-input">
                 <input
                   type="color"
                   id="bgcolor"
                   name="bgcolor"
                   value={data.bgColor}
-                  className="mx-auto block w-10 h-10 border rounded-full border-vnm bg-main md:w-[52px] md:h-[52px]"
+                  className="mx-auto border border-vnm rounded-full block w-10 h-10 bg-main md:w-[52px] md:h-[52px]"
                   onChange={(e) => handleChange('bgColor', e.target.value)}
                 />
-                <p className="mt-1 px-2 text-center text-xs text-note">
+                <p className="mt-1 px-2 text-center text-note text-xs">
                   Màu nền
                 </p>
               </div>
@@ -118,10 +118,10 @@ export default function App() {
                   id="color"
                   name="color"
                   value={data.color}
-                  className="mx-auto block w-10 h-10 border rounded-full border-vnm bg-main md:w-[52px] md:h-[52px]"
+                  className="mx-auto border border-vnm rounded-full block w-10 h-10 bg-main md:w-[52px] md:h-[52px]"
                   onChange={(e) => handleChange('color', e.target.value)}
                 />
-                <p className="mt-1 px-2 text-center text-xs text-note">
+                <p className="mt-1 px-2 text-center text-note text-xs">
                   Màu chữ
                 </p>
               </div>
@@ -137,19 +137,19 @@ export default function App() {
                 />
                 <label
                   htmlFor="uppercase"
-                  className="mx-auto border border-vnm flex justify-center items-center aspect-square h-10 rounded-full bg-main text-vnm text-2xl font-bold md:h-[52px]"
+                  className="mx-auto border border-vnm rounded-full flex justify-center items-center aspect-square h-10 bg-main text-vnm text-2xl font-bold md:h-[52px]"
                 >
                   {data.uppercase && '✓'}
                 </label>
-                <p className="mt-1 px-2 text-center text-xs text-note">
+                <p className="mt-1 px-2 text-center text-note text-xs">
                   <label htmlFor="uppercase">In hoa</label>
                 </p>
               </div>
             </div>
-            <Preview data={data} />
+            <Preview data={data} classes="mt-4" />
           </div>
         </div>
-        <div className="flex flex-col items-center justify-center py-4 text-white bg-vnm text-xs font-inter">
+        <div className="py-4 text-center bg-vnm text-white font-inter text-xs">
           <div className="px-4">
             Phát triển dựa trên{' '}
             <a
@@ -162,7 +162,7 @@ export default function App() {
             </a>
             .
           </div>
-          <div className="px-4 mt-1">
+          <div className="mt-1 px-4">
             Mã nguồn được lưu trữ trên GitHub{' '}
             <a
               className="underline"
