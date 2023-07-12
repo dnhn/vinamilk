@@ -1,11 +1,11 @@
 import { Fragment, useState } from 'react';
 
-import { Data } from './Data';
+import { IData } from './Data';
 
 import Preview from './components/Preview';
 
 export default function App() {
-  const [data, setData] = useState<Data>({
+  const [data, setData] = useState<IData>({
     name: '',
     est: '',
     year: '',

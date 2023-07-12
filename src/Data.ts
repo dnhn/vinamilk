@@ -1,4 +1,4 @@
-export type Data = {
+export type IData = {
   name: string;
   est?: string;
   year: string;

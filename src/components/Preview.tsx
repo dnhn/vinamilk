@@ -1,8 +1,8 @@
-import { Data } from '../Data';
+import { IData } from '../Data';
 
 import DownloadSvg from './DownloadSvg';
 
-export default function Preview({ data }: { data: Data }) {
+export default function Preview({ data }: { data: IData }) {
   return (
     <div className="flex flex-col gap-4">
       <div
