@@ -19,7 +19,7 @@ input[type='color'] {
   }
 
   &::-webkit-color-swatch {
-    @apply rounded-full;
+    @apply border-0 rounded-full;
   }
 
   &::-moz-color-swatch {

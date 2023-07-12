@@ -32,8 +32,8 @@ export default function App() {
             Vinamilk est. 1976,
             <br /> còn bạn?
           </div>
-          <div className="mx-auto py-10 w-full max-w-xl px-4 flex flex-col gap-4">
-            <div className="grid gap-4 sm:grid-cols-2 font-inter md:grid-cols-3">
+          <div className="mx-auto py-10 w-full max-w-xl px-4 flex flex-col gap-4 font-inter">
+            <div className="grid gap-4 md:grid-cols-3">
               <div className="relative float-label-input">
                 <input
                   id="est"
@@ -91,13 +91,15 @@ export default function App() {
                   Số hay chữ gì cũng được
                 </p>
               </div>
+            </div>
+            <div className="grid gap-4 grid-cols-3">
               <div className="relative float-label-input">
                 <input
                   type="color"
                   id="bgcolor"
                   name="bgcolor"
                   value={data.bgColor}
-                  className="relative flex-col justify-center w-full h-10 md:h-[52px] text-base border rounded-full outline-none border-vnm bg-main"
+                  className="mx-auto block w-10 h-10 border rounded-full border-vnm bg-main md:w-[52px] md:h-[52px]"
                   onChange={(e) => handleChange('bgColor', e.target.value)}
                 />
                 <p className="mt-1 px-2 text-center text-xs text-note">
@@ -110,7 +112,7 @@ export default function App() {
                   id="color"
                   name="color"
                   value={data.color}
-                  className="relative flex-col justify-center w-full h-10 md:h-[52px] text-base border rounded-full outline-none border-vnm bg-main"
+                  className="mx-auto block w-10 h-10 border rounded-full border-vnm bg-main md:w-[52px] md:h-[52px]"
                   onChange={(e) => handleChange('color', e.target.value)}
                 />
                 <p className="mt-1 px-2 text-center text-xs text-note">
@@ -129,7 +131,7 @@ export default function App() {
                 />
                 <label
                   htmlFor="uppercase"
-                  className="mb-2 flex justify-center items-center mx-auto h-10 aspect-square border border-vnm rounded-full bg-main text-vnm text-2xl font-bold md:h-[52px]"
+                  className="mx-auto border border-vnm flex justify-center items-center aspect-square h-10 rounded-full bg-main text-vnm text-2xl font-bold md:h-[52px]"
                 >
                   {data.uppercase && '✓'}
                 </label>

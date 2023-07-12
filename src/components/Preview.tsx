@@ -3,10 +3,12 @@ import { IData } from '../Data';
 import DownloadSvg from './DownloadSvg';
 
 export default function Preview({ data }: { data: IData }) {
+  function download() {}
+
   return (
     <div className="flex flex-col gap-4">
       <div
-        className="mx-auto w-[375px] aspect-square p-8 flex flex-col items-center justify-center bg-vnm text-white text-[100%]"
+        className="mx-auto aspect-square w-[375px] max-w-full p-8 flex flex-col justify-center items-center bg-vnm text-white"
         style={{
           backgroundColor: data.bgColor,
           color: data.color,
@@ -37,6 +39,7 @@ export default function Preview({ data }: { data: IData }) {
       </div>
       <button
         disabled={!data.name || !data.year}
+        onClick={download}
         className="border border-white rounded-full h-10 px-6 flex items-center justify-center gap-1 bg-vnm text-white font-sans-std text-lg md:h-[52px] focus-within:outline-vnm focus-within:outline-offset-4 disabled:bg-opacity-50"
       >
         <span>Tải về thay avatar liền</span>
