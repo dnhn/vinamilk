@@ -109,7 +109,7 @@ export default function App() {
                   onChange={(e) => handleChange('bgColor', e.target.value)}
                 />
                 <p className="mt-1 px-2 text-center text-note text-xs">
-                  Màu nền
+                  <label htmlFor="bgcolor">Màu nền</label>
                 </p>
               </div>
               <div className="relative float-label-input">
@@ -122,7 +122,7 @@ export default function App() {
                   onChange={(e) => handleChange('color', e.target.value)}
                 />
                 <p className="mt-1 px-2 text-center text-note text-xs">
-                  Màu chữ
+                  <label htmlFor="color">Màu chữ</label>
                 </p>
               </div>
               <div className="relative checkbox-input">
@@ -142,7 +142,7 @@ export default function App() {
                   {data.uppercase && '✓'}
                 </label>
                 <p className="mt-1 px-2 text-center text-note text-xs">
-                  <label htmlFor="uppercase">In hoa</label>
+                  In hoa
                 </p>
               </div>
             </div>
