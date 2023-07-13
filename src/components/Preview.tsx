@@ -30,7 +30,7 @@ export default function Preview({
       .then((url) => {
         const link = document.createElement('a');
 
-        link.download = 'image.png';
+        link.download = 'image';
         link.href = url;
         link.click();
       })

@@ -17,8 +17,6 @@ export default function App() {
   const [animation, setAnimation] = useState<boolean>(true);
 
   const slogan = [
-    '',
-    '',
     'V',
     'i',
     'n',
@@ -116,9 +114,7 @@ export default function App() {
               >
                 Bên trái
               </label>
-              <p className="mt-1 px-2 text-note text-xs">
-                Có hay không cũng được
-              </p>
+              <p className="mt-1 px-2 text-note text-xs">Để trống cũng được</p>
             </div>
             <div className="relative float-label-input">
               <input
@@ -133,7 +129,7 @@ export default function App() {
                 htmlFor="name"
                 className="pointer-events-none absolute top-2.5 left-2 rounded-full px-2 text-vnm font-sans-std text-sm transition duration-200 ease-in-out md:top-4"
               >
-                Chính giữa
+                Trung tâm
               </label>
               <p className="mt-1 px-2 text-note text-xs">Viết sao cũng được</p>
             </div>
@@ -200,7 +196,9 @@ export default function App() {
               >
                 {data.uppercase && '✓'}
               </label>
-              <p className="mt-1 px-2 text-center text-note text-xs">In hoa</p>
+              <p className="mt-1 px-2 text-center text-note text-xs">
+                Viết hoa
+              </p>
             </div>
           </div>
           {!animation && <Preview data={data} classes="mt-4" />}
