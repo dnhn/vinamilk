@@ -10,7 +10,7 @@ export default function Preview({
   classes,
 }: {
   data: IData;
-  classes: string;
+  classes?: string;
 }) {
   const final = useRef<HTMLDivElement>(null);
 

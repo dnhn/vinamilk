@@ -2,6 +2,7 @@ import { Fragment, useState } from 'react';
 
 import { IData } from './Types';
 
+import Typer from './components/Typer';
 import Preview from './components/Preview';
 
 export default function App() {
@@ -13,6 +14,58 @@ export default function App() {
     color: '#fffff1',
     uppercase: true,
   });
+  const [animation, setAnimation] = useState<boolean>(true);
+
+  const slogan = [
+    'V',
+    'i',
+    'n',
+    'a',
+    'm',
+    'i',
+    'l',
+    'k',
+    ' ',
+    'e',
+    's',
+    't',
+    '.',
+    ' ',
+    '1',
+    '9',
+    '7',
+    '6',
+    ',',
+    '<br />',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    'c',
+    'ò',
+    'n',
+    ' ',
+    'b',
+    'ạ',
+    'n',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '?',
+    '',
+    '',
+    '',
+    '',
+    '',
+  ];
 
   function handleChange(field: string, value: string | boolean) {
     setData((prevData) => ({
@@ -32,12 +85,19 @@ export default function App() {
           className="mx-auto"
         />
       </header>
-      <main className="flex-1 py-10 overflow-auto">
-        <h1 className="py-2 px-3 text-center text-vnm font-sans-display-bold text-[60px] leading-[85%] uppercase md:px-4 md:text-[110px] md:leading-[85%]">
-          Vinamilk est. 1976,
-          <br /> còn bạn?
+      <main
+        className={`flex-1 py-10 ${
+          animation ? 'overflow-hidden' : 'overflow-auto'
+        }`}
+      >
+        <h1 className="relative py-2 px-3 text-center text-vnm font-sans-display-bold text-[60px] leading-[85%] uppercase md:px-4 md:text-[110px] md:leading-[85%]">
+          <Typer content={slogan} onComplete={() => setAnimation(false)} />
         </h1>
-        <div className="mx-auto w-full max-w-xl pt-10 px-4 font-inter">
+        <div
+          className={`mx-auto w-full max-w-xl pt-10 px-4 font-inter transition duration-1000 ease-in-out ${
+            animation ? 'pointer-events-none opacity-0' : ''
+          }`}
+        >
           <div className="grid gap-4 md:grid-cols-3">
             <div className="relative float-label-input">
               <input
