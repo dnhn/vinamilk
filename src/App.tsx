@@ -17,6 +17,8 @@ export default function App() {
   const [animation, setAnimation] = useState<boolean>(true);
 
   const slogan = [
+    '',
+    '',
     'V',
     'i',
     'n',
