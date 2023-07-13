@@ -28,8 +28,14 @@ input[type='color'] {
 }
 
 .checkbox-input {
-  input:focus-within + label {
-    @apply outline-2 outline-vnm outline-offset-2;
-    outline-style: solid;
+  input {
+    &:focus-within + label {
+      @apply outline-2 outline-vnm outline-offset-2;
+      outline-style: solid;
+    }
+
+    &:checked + label {
+      @apply bg-vnm text-white;
+    }
   }
 }
