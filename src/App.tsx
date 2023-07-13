@@ -201,14 +201,14 @@ export default function App() {
               <p className="mt-1 px-2 text-center text-note text-xs">In hoa</p>
             </div>
           </div>
-          <Preview data={data} classes="mt-4" />
+          {!animation && <Preview data={data} classes="mt-4" />}
         </div>
       </main>
       <footer className="py-4 text-center bg-vnm text-white font-inter text-xs">
         <div className="px-4">
           Phát triển dựa trên{' '}
           <a
-            className="underline font-sans-std"
+            className="font-sans-std underline"
             href="https://est1976.vinamilk.com.vn"
             target="_blank"
             rel="noopener noreferrer"
