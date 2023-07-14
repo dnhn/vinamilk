@@ -5,16 +5,17 @@ export default function Typer({
   onComplete,
 }: {
   content: string[];
-  onComplete?: Function;
+  onComplete?: VoidFunction;
 }) {
   const [fontLoaded, setFontLoaded] = useState<boolean>(false);
   const [text, setText] = useState<string>('');
   const [index, setIndex] = useState<number>(0);
 
   useEffect(() => {
-    document.fonts
-      .load('16px VNM Sans Display Bold', 'V')
-      .then(() => setFontLoaded(true));
+    document.fonts.load('16px VNM Sans Display Bold', 'V').then(
+      () => setFontLoaded(true),
+      (e) => console.log(e)
+    );
   }, []);
 
   useEffect(() => {
@@ -28,7 +29,7 @@ export default function Typer({
     } else if (index >= content.length && onComplete) {
       onComplete();
     }
-  }, [content, fontLoaded, index]);
+  }, [content, fontLoaded, index, onComplete]);
 
   return <div dangerouslySetInnerHTML={{ __html: text }} />;
 }

@@ -7,7 +7,7 @@ import DownloadSvg from './DownloadSvg';
 
 export default function Preview({
   data,
-  classes,
+  classes = '',
 }: {
   data: IData;
   classes?: string;
