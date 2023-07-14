@@ -7,21 +7,28 @@ export default function Typer({
   content: string[];
   onComplete?: Function;
 }) {
-  const [text, setText] = useState('');
-  const [index, setIndex] = useState(0);
+  const [fontLoaded, setFontLoaded] = useState<boolean>(false);
+  const [text, setText] = useState<string>('');
+  const [index, setIndex] = useState<number>(0);
 
   useEffect(() => {
-    if (index < content.length) {
+    document.fonts
+      .load('16px VNM Sans Display Bold', 'V')
+      .then(() => setFontLoaded(true));
+  }, []);
+
+  useEffect(() => {
+    if (fontLoaded && index < content.length) {
       const timeout = setTimeout(() => {
         setText((prevText) => prevText + content[index]);
         setIndex((prevIndex) => prevIndex + 1);
       }, 100);
 
       return () => clearTimeout(timeout);
-    } else {
-      onComplete && onComplete();
+    } else if (index >= content.length && onComplete) {
+      onComplete();
     }
-  }, [content, index]);
+  }, [content, fontLoaded, index]);
 
   return <div dangerouslySetInnerHTML={{ __html: text }} />;
 }
