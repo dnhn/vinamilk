@@ -30,8 +30,8 @@ export default function Preview({
       .then((url) => {
         const link = document.createElement('a');
 
-        link.download = 'image';
         link.href = url;
+        link.download = 'image';
         link.click();
       })
       .catch((e) => console.log(e));
@@ -41,7 +41,7 @@ export default function Preview({
     <div className={`flex flex-col gap-4 items-center ${classes}`}>
       <div
         ref={final}
-        className="aspect-square w-[375px] max-w-full p-8 flex flex-col justify-center items-center bg-vnm text-white"
+        className="aspect-square w-[375px] p-8 flex flex-col justify-center items-center bg-vnm text-white"
         style={{
           backgroundColor: data.bgColor,
           color: data.color,
@@ -80,6 +80,7 @@ export default function Preview({
           <DownloadSvg />
         </span>
       </button>
+      <p className="text-note text-xs">Hãy thử tải lại nếu hình bị lỗi nha.</p>
     </div>
   );
 }
