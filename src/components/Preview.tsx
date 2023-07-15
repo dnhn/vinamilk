@@ -34,7 +34,7 @@ export default function Preview({
         link.download = 'image';
         link.click();
       })
-      .catch((e) => console.log(e));
+      .catch((e) => console.error(e));
   }, [final]);
 
   return (

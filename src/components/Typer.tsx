@@ -14,7 +14,7 @@ export default function Typer({
   useEffect(() => {
     document.fonts.load('16px VNM Sans Display Bold', 'V').then(
       () => setFontLoaded(true),
-      (e) => console.log(e)
+      (e) => console.error(e)
     );
   }, []);
 
