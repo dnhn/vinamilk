@@ -7,9 +7,9 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: (id) => {
-          if (id.includes('react') || id.includes('scheduler')) {
+          if (id.indexOf('react') !== -1 || id.indexOf('scheduler') !== -1) {
             return 'react';
-          } else if (id.includes('html-to-image')) {
+          } else if (id.indexOf('html-to-image') !== -1) {
             return 'html-to-image';
           } else {
             return 'vendor';
