@@ -1,4 +1,11 @@
 @font-face {
+  font-family: 'VNM Sans Display Bold';
+  src: url(/fonts/VNMSansDisplay-Bold.woff2) format('woff2'),
+    url(/fonts/VNMSansDisplay-Bold.woff) format('woff');
+  font-display: swap;
+}
+
+@font-face {
   font-family: 'VNM Sans Display';
   src: url(/fonts/VNMSansDisplay-Regular.woff2) format('woff2'),
     url(/fonts/VNMSansDisplay-Regular.woff) format('woff');
@@ -9,12 +16,5 @@
   font-family: 'VNM Sans Std';
   src: url(/fonts/VNMSansStd-Regular.woff2) format('woff2'),
     url(/fonts/VNMSansStd-Regular.woff) format('woff');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'VNM Sans Display Bold';
-  src: url(/fonts/VNMSansDisplay-Bold.woff2) format('woff2'),
-    url(/fonts/VNMSansDisplay-Bold.woff) format('woff');
   font-display: swap;
 }
