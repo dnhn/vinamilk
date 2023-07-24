@@ -67,10 +67,10 @@ export default function App() {
     <Fragment>
       <header className="py-4 bg-main">
         <img
-          src="/images/logo.svg"
+          src="/logo.svg"
           width={115}
           height={38}
-          alt="header"
+          alt="Logo"
           className="mx-auto"
         />
       </header>
