@@ -13,8 +13,8 @@ export default function Typer({
 
   useEffect(() => {
     document.fonts.load('16px VNM Sans Display Bold', 'V').then(
-      () => setFontLoaded(true),
-      (e) => console.error(e)
+      () => { setFontLoaded(true) },
+      () => { console.error(e) },
     );
   }, []);
 
@@ -25,7 +25,7 @@ export default function Typer({
         setIndex((prevIndex) => prevIndex + 1);
       }, 100);
 
-      return () => clearTimeout(timeout);
+      return () => { clearTimeout(timeout) };
     } else if (index >= content.length && onComplete) {
       onComplete();
     }

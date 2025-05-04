@@ -41,7 +41,7 @@ export default function Preview({
           setProcessing(false);
         }, 1000);
       })
-      .catch((e) => {
+      .catch(() => {
         console.error(e);
         setProcessing(false);
       });
@@ -70,7 +70,7 @@ export default function Preview({
             {data.name && (
               <div className="-mt-1 flex justify-between">
                 <span className="font-sans-display-bold text-[21px]">
-                  {data.est || (data.year && 'EST')}
+                  {data.est ?? (data.year && 'EST')}
                 </span>
                 <span className="font-sans-display-bold text-[21px]">
                   {data.year}
