@@ -41,7 +41,7 @@ export default function Preview({
           setProcessing(false);
         }, 1000);
       })
-      .catch(() => {
+      .catch((e: unknown) => {
         console.error(e);
         setProcessing(false);
       });
