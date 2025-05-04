@@ -7,7 +7,6 @@
   --font-sans-display-bold: 'VNM Sans Display Bold', var(--font-sans);
   --font-sans-display: 'VNM Sans Display', var(--font-sans);
   --font-sans-std: 'VNM Sans Std', var(--font-sans);
-  --font-inter: Inter, var(--font-sans);
 
   --color-vnm: #0213b0;
   --color-main: #fffff1;

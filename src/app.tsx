@@ -83,7 +83,7 @@ export default function App() {
           <Typer content={slogan} onComplete={() => { setAnimation(false) }} />
         </h1>
         <div
-          className={`mx-auto w-full max-w-xl pt-10 px-4 font-inter transition duration-1000 ease-in-out ${
+          className={`mx-auto w-full max-w-xl pt-10 px-4 transition duration-1000 ease-in-out ${
             animation ? 'pointer-events-none opacity-0' : ''
           }`}
         >
@@ -193,7 +193,7 @@ export default function App() {
           {!animation && <Preview data={data} classes="mt-4" />}
         </div>
       </main>
-      <footer className="py-4 text-center bg-vnm text-white font-inter text-xs">
+      <footer className="py-4 text-center bg-vnm text-white text-xs">
         <div className="px-4">
           Phát triển dựa trên{' '}
           <a
