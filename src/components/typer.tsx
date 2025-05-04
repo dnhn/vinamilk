@@ -7,9 +7,9 @@ export default function Typer({
   content: string[];
   onComplete?: VoidFunction;
 }) {
-  const [fontLoaded, setFontLoaded] = useState<boolean>(false);
-  const [text, setText] = useState<string>('');
-  const [index, setIndex] = useState<number>(0);
+  const [fontLoaded, setFontLoaded] = useState(false);
+  const [text, setText] = useState('');
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
     document.fonts.load('16px VNM Sans Display Bold', 'V').then(

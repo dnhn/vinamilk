@@ -1,19 +1,19 @@
-import { Fragment, useCallback, useRef, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import { toPng } from 'html-to-image';
 
-import { IData } from '../Types';
+import { Data } from '../types';
 
-import DownloadSvg from './DownloadSvg';
+import DownloadSvg from './download-svg';
 
 export default function Preview({
   data,
   classes = '',
 }: {
-  data: IData;
+  data: Data;
   classes?: string;
 }) {
   const final = useRef<HTMLDivElement>(null);
-  const [processing, setProcessing] = useState<boolean>(false);
+  const [processing, setProcessing] = useState(false);
 
   const download = useCallback(() => {
     if (final.current === null) {
@@ -83,17 +83,17 @@ export default function Preview({
       <button
         disabled={!data.name || processing}
         onClick={download}
-        className="border border-white rounded-full w-full h-10 px-6 flex items-center justify-center gap-1 bg-vnm text-white font-sans-std text-lg md:h-[52px] focus-within:outline-vnm focus-within:outline-offset-4 disabled:bg-opacity-50"
+        className="border border-white rounded-full w-full h-10 px-6 flex items-center justify-center gap-1 bg-vnm text-white font-sans-std text-lg md:h-[52px] focus-within:outline-vnm focus-within:outline-offset-4 disabled:bg-vnm/50"
       >
         {processing ? (
           <span>Đang xử lý</span>
         ) : (
-          <Fragment>
+          <>
             <span>Tải về thay avatar liền</span>
             <span className="text-2xl">
               <DownloadSvg />
             </span>
-          </Fragment>
+          </>
         )}
       </button>
       <p className="text-note text-xs">Hãy thử tải lại nếu hình bị lỗi nha.</p>

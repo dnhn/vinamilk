@@ -1,20 +1,20 @@
-import { Fragment, useState } from 'react';
+import { useState } from 'react';
 
-import { IData } from './Types';
+import { Data } from './types';
 
-import Typer from './components/Typer';
-import Preview from './components/Preview';
+import Typer from './components/typer';
+import Preview from './components/preview';
 
 export default function App() {
-  const [data, setData] = useState<IData>({
-    name: '',
-    est: '',
-    year: '',
+  const [data, setData] = useState<Data>({
     bgColor: '#0213b0',
     color: '#fffff1',
+    est: '',
+    name: '',
     uppercase: true,
+    year: '',
   });
-  const [animation, setAnimation] = useState<boolean>(true);
+  const [animation, setAnimation] = useState(true);
 
   const slogan = [
     'V',
@@ -64,7 +64,7 @@ export default function App() {
   }
 
   return (
-    <Fragment>
+    <>
       <header className="py-4 bg-main">
         <img
           src="/logo.svg"
@@ -94,7 +94,7 @@ export default function App() {
                 name="est"
                 placeholder=" "
                 value={data.est}
-                className="relative border border-vnm outline-none rounded-full w-full h-10 px-6 bg-main text-vnm text-base md:h-[52px]"
+                className="relative border border-vnm outline-hidden rounded-full w-full h-10 px-6 bg-main text-vnm text-base md:h-[52px]"
                 onChange={(e) => handleChange('est', e.target.value)}
               />
               <label
@@ -111,7 +111,7 @@ export default function App() {
                 name="name"
                 placeholder=" "
                 value={data.name}
-                className="relative border border-vnm outline-none rounded-full w-full h-10 px-6 bg-main text-vnm text-base md:h-[52px]"
+                className="relative border border-vnm outline-hidden rounded-full w-full h-10 px-6 bg-main text-vnm text-base md:h-[52px]"
                 onChange={(e) => handleChange('name', e.target.value)}
               />
               <label
@@ -128,7 +128,7 @@ export default function App() {
                 name="year"
                 placeholder=" "
                 value={data.year}
-                className="relative border border-vnm outline-none rounded-full w-full h-10 px-6 bg-main text-vnm text-base md:h-[52px]"
+                className="relative border border-vnm outline-hidden rounded-full w-full h-10 px-6 bg-main text-vnm text-base md:h-[52px]"
                 onChange={(e) => handleChange('year', e.target.value)}
               />
               <label
@@ -219,6 +219,6 @@ export default function App() {
           .
         </div>
       </footer>
-    </Fragment>
+    </>
   );
 }

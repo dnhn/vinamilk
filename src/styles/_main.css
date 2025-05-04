@@ -1,11 +1,7 @@
 .float-label-input {
   input:not(:placeholder-shown) + label,
   &:focus-within label {
-    @apply mt-1 bg-main -translate-y-6 scale-75;
-
-    @media (min-width: 768px) {
-      @apply mt-[-.125rem];
-    }
+    @apply mt-1 bg-main -translate-y-6 scale-75 md:mt-[-.125rem];
   }
 }
 
@@ -31,7 +27,6 @@ input[type='color'] {
   input {
     &:focus-within + label {
       @apply outline-2 outline-vnm outline-offset-2;
-      outline-style: solid;
     }
 
     &:checked + label {
