@@ -5,20 +5,12 @@ import { Data } from '../types';
 
 import DownloadSvg from './download-svg';
 
-export default function Preview({
-  data,
-  classes = '',
-}: {
-  data: Data;
-  classes?: string;
-}) {
+export default function Preview({ data, classes = '' }: Props) {
   const final = useRef<HTMLDivElement>(null);
   const [processing, setProcessing] = useState(false);
 
   const download = useCallback(() => {
-    if (final.current === null) {
-      return;
-    }
+    if (final.current === null) return;
 
     setProcessing(true);
 
@@ -99,4 +91,9 @@ export default function Preview({
       <p className="text-note text-xs">Hãy thử tải lại nếu hình bị lỗi nha.</p>
     </div>
   );
+}
+
+interface Props {
+  data: Data;
+  classes?: string;
 }

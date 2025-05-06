@@ -40,7 +40,7 @@ const content = [
   '',
 ];
 
-export default function Typer({ onComplete }: { onComplete?: VoidFunction }) {
+export default function Typer({ onComplete }: Props) {
   const [fontLoaded, setFontLoaded] = useState(false);
   const [text, setText] = useState('');
   const [index, setIndex] = useState(0);
@@ -66,4 +66,8 @@ export default function Typer({ onComplete }: { onComplete?: VoidFunction }) {
   }, [fontLoaded, index, onComplete]);
 
   return <div dangerouslySetInnerHTML={{ __html: text }} />;
+}
+
+interface Props {
+  onComplete?: VoidFunction;
 }
