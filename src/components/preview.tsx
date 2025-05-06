@@ -70,7 +70,7 @@ export default function Preview({
             {data.name && (
               <div className="-mt-1 flex justify-between">
                 <span className="font-sans-display-bold text-[1.3125rem]">
-                  {data.est ?? (data.year && 'EST')}
+                  {data.est || (data.year && 'EST')}
                 </span>
                 <span className="font-sans-display-bold text-[1.3125rem]">
                   {data.year}
