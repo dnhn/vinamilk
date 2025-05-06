@@ -51,7 +51,7 @@ export default function Preview({
     <div className={`flex flex-col gap-4 items-center ${classes}`}>
       <div
         ref={final}
-        className="aspect-square w-[375px] p-8 flex flex-col justify-center items-center bg-vnm text-white"
+        className="aspect-square w-93.75 p-8 flex flex-col justify-center items-center bg-vnm text-white"
         style={{
           backgroundColor: data.bgColor,
           color: data.color,
@@ -69,10 +69,10 @@ export default function Preview({
             </div>
             {data.name && (
               <div className="-mt-1 flex justify-between">
-                <span className="font-sans-display-bold text-[21px]">
+                <span className="font-sans-display-bold text-[1.3125rem]">
                   {data.est ?? (data.year && 'EST')}
                 </span>
-                <span className="font-sans-display-bold text-[21px]">
+                <span className="font-sans-display-bold text-[1.3125rem]">
                   {data.year}
                 </span>
               </div>
@@ -83,7 +83,7 @@ export default function Preview({
       <button
         disabled={!data.name || processing}
         onClick={download}
-        className="border border-white rounded-full w-full h-10 px-6 flex items-center justify-center gap-1 bg-vnm text-white font-sans-std text-lg md:h-[52px] focus-within:outline-vnm focus-within:outline-offset-4 disabled:bg-vnm/50"
+        className="border border-white rounded-full w-full h-10 px-6 flex items-center justify-center gap-1 bg-vnm text-white font-sans-std text-lg md:h-13 focus-within:outline-vnm focus-within:outline-offset-4 disabled:bg-vnm/50"
       >
         {processing ? (
           <span>Đang xử lý</span>

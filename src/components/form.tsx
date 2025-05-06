@@ -9,7 +9,7 @@ export default function Form({ data, handleChange }: Props) {
           name="est"
           placeholder=" "
           value={data.est}
-          className="relative border border-vnm outline-hidden rounded-full w-full h-10 px-6 bg-main text-vnm text-base md:h-[52px]"
+          className="relative border border-vnm outline-hidden rounded-full w-full h-10 px-6 bg-main text-vnm text-base md:h-13"
           onChange={(e) => { handleChange('est', e.target.value) }}
         />
         <label
@@ -26,7 +26,7 @@ export default function Form({ data, handleChange }: Props) {
           name="name"
           placeholder=" "
           value={data.name}
-          className="relative border border-vnm outline-hidden rounded-full w-full h-10 px-6 bg-main text-vnm text-base md:h-[52px]"
+          className="relative border border-vnm outline-hidden rounded-full w-full h-10 px-6 bg-main text-vnm text-base md:h-13"
           onChange={(e) => { handleChange('name', e.target.value) }}
         />
         <label
@@ -43,7 +43,7 @@ export default function Form({ data, handleChange }: Props) {
           name="year"
           placeholder=" "
           value={data.year}
-          className="relative border border-vnm outline-hidden rounded-full w-full h-10 px-6 bg-main text-vnm text-base md:h-[52px]"
+          className="relative border border-vnm outline-hidden rounded-full w-full h-10 px-6 bg-main text-vnm text-base md:h-13"
           onChange={(e) => { handleChange('year', e.target.value) }}
         />
         <label
@@ -62,7 +62,7 @@ export default function Form({ data, handleChange }: Props) {
           id="bgcolor"
           name="bgcolor"
           value={data.bgColor}
-          className="mx-auto border border-vnm outline-vnm outline-offset-4 rounded-full block w-10 h-10 bg-main md:w-[52px] md:h-[52px] focus:outline-2"
+          className="mx-auto border border-vnm outline-vnm outline-offset-4 rounded-full block w-10 h-10 bg-main md:w-13 md:h-13 focus:outline-2"
           onChange={(e) => { handleChange('bgColor', e.target.value) }}
         />
         <p className="mt-1 px-2 text-center text-note text-xs">
@@ -75,7 +75,7 @@ export default function Form({ data, handleChange }: Props) {
           id="color"
           name="color"
           value={data.color}
-          className="mx-auto border border-vnm outline-vnm outline-offset-4 rounded-full block w-10 h-10 bg-main md:w-[52px] md:h-[52px] focus:outline-2"
+          className="mx-auto border border-vnm outline-vnm outline-offset-4 rounded-full block w-10 h-10 bg-main md:w-13 md:h-13 focus:outline-2"
           onChange={(e) => { handleChange('color', e.target.value) }}
         />
         <p className="mt-1 px-2 text-center text-note text-xs">
@@ -94,7 +94,7 @@ export default function Form({ data, handleChange }: Props) {
         />
         <label
           htmlFor="uppercase"
-          className="mx-auto border border-vnm rounded-full flex justify-center items-center aspect-square h-10 bg-main text-vnm text-2xl font-bold md:h-[52px]"
+          className="mx-auto border border-vnm rounded-full flex justify-center items-center aspect-square h-10 bg-main text-vnm text-2xl font-bold md:h-13"
         >
           {data.uppercase && '✓'}
         </label>

@@ -31,7 +31,7 @@ export default function App() {
           animation ? 'overflow-hidden' : 'overflow-auto'
         }`}
       >
-        <h1 className="relative py-2 px-3 text-center text-vnm font-sans-display-bold text-[60px] leading-[85%] uppercase md:px-4 md:text-[110px] md:leading-[85%]">
+        <h1 className="relative py-2 px-3 text-center text-vnm font-sans-display-bold text-[3.75rem] leading-[85%] uppercase md:px-4 md:text-[6.875rem]">
           <Typer onComplete={() => { setAnimation(false) }} />
         </h1>
         <div
