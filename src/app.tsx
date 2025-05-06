@@ -18,51 +18,8 @@ export default function App() {
   });
   const [animation, setAnimation] = useState(true);
 
-  const slogan = [
-    'V',
-    'i',
-    'n',
-    'a',
-    'm',
-    'i',
-    'l',
-    'k',
-    ' ',
-    'e',
-    's',
-    't',
-    '.',
-    ' ',
-    '1',
-    '9',
-    '7',
-    '6',
-    ',<br />',
-    '',
-    '',
-    '',
-    '',
-    '',
-    'c',
-    'ò',
-    'n',
-    ' ',
-    'b',
-    'ạ',
-    'n',
-    '?',
-    '',
-    '',
-    '',
-    '',
-    '',
-  ];
-
   function handleChange(field: string, value: string | boolean) {
-    setData((prevData) => ({
-      ...prevData,
-      [field]: value,
-    }));
+    setData((prevData) => ({ ...prevData, [field]: value }));
   }
 
   return (
@@ -74,10 +31,10 @@ export default function App() {
         }`}
       >
         <h1 className="relative py-2 px-3 text-center text-vnm font-sans-display-bold text-[60px] leading-[85%] uppercase md:px-4 md:text-[110px] md:leading-[85%]">
-          <Typer content={slogan} onComplete={() => { setAnimation(false) }} />
+          <Typer onComplete={() => { setAnimation(false) }} />
         </h1>
         <div
-          className={`mx-auto w-full max-w-xl pt-10 px-4 transition duration-1000 ease-in-out ${
+          className={`mx-auto space-y-4 w-full max-w-xl pt-10 px-4 transition duration-1000 ease-in-out ${
             animation ? 'pointer-events-none opacity-0' : ''
           }`}
         >
@@ -136,8 +93,8 @@ export default function App() {
               </p>
             </div>
           </div>
-          <div className="mt-4 grid grid-cols-3 gap-4">
-            <div className="relative float-label-input">
+          <div className="grid grid-cols-3 gap-4">
+            <div className="relative">
               <input
                 type="color"
                 id="bgcolor"
@@ -150,7 +107,7 @@ export default function App() {
                 <label htmlFor="bgcolor">Màu nền</label>
               </p>
             </div>
-            <div className="relative float-label-input">
+            <div className="relative">
               <input
                 type="color"
                 id="color"
@@ -184,7 +141,7 @@ export default function App() {
               </p>
             </div>
           </div>
-          {!animation && <Preview data={data} classes="mt-4" />}
+          {!animation && <Preview data={data} />}
         </div>
       </main>
       <Footer />
