@@ -38,8 +38,8 @@ export default function App() {
             animation ? 'pointer-events-none opacity-0' : ''
           }`}
         >
-          <div className="grid gap-4 md:grid-cols-3">
-            <div className="relative float-label-input">
+          <div className="grid grid-cols-3 gap-4">
+            <div className="relative float-label-input max-md:col-span-full">
               <input
                 id="est"
                 name="est"
@@ -56,7 +56,7 @@ export default function App() {
               </label>
               <p className="mt-1 px-2 text-note text-xs">Để trống cũng được</p>
             </div>
-            <div className="relative float-label-input">
+            <div className="relative float-label-input max-md:col-span-full">
               <input
                 id="name"
                 name="name"
@@ -73,7 +73,7 @@ export default function App() {
               </label>
               <p className="mt-1 px-2 text-note text-xs">Viết sao cũng được</p>
             </div>
-            <div className="relative float-label-input">
+            <div className="relative float-label-input max-md:col-span-full">
               <input
                 id="year"
                 name="year"
@@ -92,8 +92,6 @@ export default function App() {
                 Số hay chữ gì cũng được
               </p>
             </div>
-          </div>
-          <div className="grid grid-cols-3 gap-4">
             <div className="relative">
               <input
                 type="color"
